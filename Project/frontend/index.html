@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="stylesheet" href="./node_modules/flatpickr/dist/flatpickr.min.css">
+    <script src="./node_modules/flatpickr/dist/flatpickr.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LST Downscaling UI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="map"></div>
+<div id="sidebar">
+    <h1>LST Downscaling Tool</h1>
+    <div id="coordinate-input">
+        <h3>Select Coordinates</h3>
+        <div class="coordinate-row">
+            <span id="pin1" class="pin">📍</span>
+            <input type="number" id="lat1" step="0.000001" placeholder="Lat">
+            <input type="number" id="long1" step="0.000001" placeholder="Long">
+        </div>
+        <div class="coordinate-row">
+            <span id="pin2" class="pin">📍</span>
+            <input type="number" id="lat2" step="0.000001" placeholder="Lat">
+            <input type="number" id="long2" step="0.000001" placeholder="Long">
+        </div>
+        <div class="coordinate-row">
+            <span id="pin3" class="pin">📍</span>
+            <input type="number" id="lat3" step="0.000001" placeholder="Lat">
+            <input type="number" id="long3" step="0.000001" placeholder="Long">
+        </div>
+        <div class="coordinate-row">
+            <span id="pin4" class="pin">📍</span>
+            <input type="number" id="lat4" step="0.000001" placeholder="Lat">
+            <input type="number" id="long4" step="0.000001" placeholder="Long">
+        </div>
+
+    </div>
+
+    <div id="date-input">
+        <h3>Select Date Range</h3>
+        <div>
+            <label for="start-date">Start Date:</label>
+            <input type="text" id="start-date" placeholder="YYYY-MM-DD">
+        </div>
+        <div>
+            <label for="end-date">End Date:</label>
+            <input type="text" id="end-date" placeholder="YYYY-MM-DD">
+        </div>
+    </div>
+
+    <div id="cloud-input">
+        <h3>Cloud Percentage</h3>
+        <input type="number" id="cloud-percentage" placeholder="Cloud %">
+    </div>
+
+    <button id="run-button" type="submit">Run</button>
+    <div id="result"></div>
+</div>
+
+
+<script src="main.js"></script>
+</body>
+</html>

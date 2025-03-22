@@ -1,0 +1,9 @@
+{
+  "server": {
+    "baseDir": "./",
+    "https": {
+      "cert": "./server.cert",
+      "key": "./server.key"
+    }
+  }
+}

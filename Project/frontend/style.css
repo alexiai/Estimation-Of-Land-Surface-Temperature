@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+#sidebar {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 320px;
+    background-color: #f5f5dc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.coordinate-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.coordinate-row label {
+    margin-right: 10px;
+}
+
+.coordinate-row input[type="number"] {
+    width: 80px;
+    margin-right: 10px;
+}
+
+.coordinate-row input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+#date-input, #cloud-input {
+    margin-top: 20px;
+}
+
+#date-input div {
+    margin-bottom: 10px;
+}
+
+#run-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#run-button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    word-wrap: break-word;
+}
+
