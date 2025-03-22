@@ -83,6 +83,14 @@ This repository presents a web application designed and implemented **entirely b
 
 ---
 
+---
+
+## 🎥 Demo Video
+
+[▶️ Click here to download and watch the video demo](https://drive.google.com/file/d/1sTktpgRfE6f2Y9g4Sxj3Fb2MxqkTwQLV/view?usp=sharing)
+
+---
+
 ## 📤 Output
 
 - ✅ 10m LST raster
