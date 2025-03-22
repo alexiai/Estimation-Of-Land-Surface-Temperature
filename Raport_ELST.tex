@@ -1,0 +1,167 @@
+\documentclass[runningheads,a4paper,11pt]{report}
+
+\usepackage{algorithmic}
+\usepackage{algorithm} 
+\usepackage{array}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{comment} 
+\usepackage{epsfig} 
+\usepackage{fancyhdr}
+\usepackage[T1]{fontenc}
+\usepackage{geometry} 
+\usepackage{graphicx}
+\usepackage[colorlinks]{hyperref} 
+\usepackage[latin1]{inputenc}
+\usepackage{multicol}
+\usepackage{multirow} 
+\usepackage{rotating}
+\usepackage{setspace}
+\usepackage{subfigure}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{xcolor}
+
+\geometry{a4paper,top=3cm,left=2cm,right=2cm,bottom=3cm}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{Land Surface Temperature Downscaling}
+\fancyhead[RE,LO]{Roberto Chiper et al.}
+\fancyfoot[RE,LO]{UBB MIRPR 2024-2025}
+\fancyfoot[LE,RO]{\thepage}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \headrulewidth\hfill}}
+\renewcommand{\footrule}{\hbox to\headwidth{%
+  \color{lime}\leaders\hrule height \footrulewidth\hfill}}
+
+\hypersetup{
+pdftitle={Land Surface Temperature Estimation},
+pdfauthor={Roberto Chiper},
+pdfkeywords={LST, NDVI, NDWI, NDWI, Regression, Residual Correction},
+bookmarksnumbered,
+pdfstartview={FitH},
+urlcolor=cyan,
+colorlinks=true,
+linkcolor=red,
+citecolor=green,
+}
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+
+\linespread{1.5}
+
+\begin{document}
+
+\begin{titlepage}
+\sloppy
+
+\begin{center}
+BABE\c S BOLYAI UNIVERSITY, CLUJ NAPOCA, ROM\^ ANIA
+
+FACULTY OF MATHEMATICS AND COMPUTER SCIENCE
+
+\vspace{6cm}
+
+\Huge \textbf{ESTIMATION OF LAND SURFACE TEMPERATURE}
+
+\vspace{1cm}
+
+\normalsize -- MIRPR Report --
+
+\end{center}
+
+\vspace{5cm}
+
+\begin{flushright}
+\Large{\textbf{Team members}}\\
+Roberto Chiper, Alexia Ilaria Cojan, Andrei Mihai Diaconescu\\
+\end{flushright}
+
+\begin{center}
+2024-2025
+\end{center}
+
+\end{titlepage}
+
+\pagenumbering{gobble}
+
+\begin{abstract}
+Urban Heat Island (UHI) Effect is a significant problem caused by reduced vegetation and increased artificial surfaces. Thermal infrared satellite sensors provide low spatial resolution (30m), limiting urban analysis. Our project addresses this issue by downscaling Landsat 8 LST data to 10m resolution using Sentinel-2 multispectral data. Key techniques include multiple linear regression, residual correction, and cloud-based processing using Google Earth Engine. Validation was performed through in situ measurements and visual analysis, yielding improved accuracy in high-resolution temperature mapping.
+\end{abstract}
+
+\tableofcontents
+\newpage
+
+\chapter{Introduction}
+\section{What? Why? How?}
+Urban areas experience elevated temperatures compared to rural regions due to the Urban Heat Island (UHI) effect. Accurate high-resolution temperature estimation is essential for urban planning and mitigating UHI. Current satellite-based thermal infrared sensors lack the spatial resolution required for detailed analysis. This project focuses on downscaling Landsat 8 LST data using Sentinel-2 indices (NDVI, NDWI, NDBI) and a multiple regression model enhanced by residual correction.
+
+\section{Paper Structure and Contributions}
+The report is structured as follows:
+\begin{itemize}
+    \item Chapter 2: Problem definition and motivation.
+    \item Chapter 3: Related work and comparison.
+    \item Chapter 4: Proposed methodology and workflow.
+    \item Chapter 5: Implementation details and validation.
+    \item Chapter 6: Conclusions and future work.
+\end{itemize}
+Our primary contributions include:
+\begin{itemize}
+    \item Development of a regression model for LST prediction using multispectral indices.
+    \item Integration of residual correction for improved accuracy.
+    \item A scalable workflow implemented on Google Earth Engine.
+\end{itemize}
+
+\chapter{Scientific Problem}
+\section{Problem Definition}
+The challenge lies in downscaling thermal data from 30m to 10m resolution, addressing the need for fine-scale temperature maps in urban settings. This involves combining multispectral and thermal data using advanced regression techniques and residual correction to minimize prediction errors.
+
+\section{Relevance}
+High-resolution LST data is critical for urban heat management, disaster planning, and climate research. Traditional methods fail to capture fine-scale variations, making this approach highly valuable.
+
+\chapter{Proposed Solution and Methodology}
+\section{Workflow}
+\begin{enumerate}
+    \item Extract spectral indices (NDVI, NDBI, NDWI) from Landsat 8 and Sentinel-2.
+    \item Train a regression model using Landsat 8 data.
+    \item Apply the model to Sentinel-2 indices for 10m LST prediction.
+    \item Perform residual correction using Gaussian smoothing.
+    \item Validate results through statistical and visual analysis.
+\end{enumerate}
+
+\section{Key Techniques}
+\begin{itemize}
+    \item \textbf{Multiple Linear Regression:} Uses spectral indices to predict LST.
+    \item \textbf{Residual Correction:} Improves model accuracy by smoothing errors.
+    \item \textbf{Google Earth Engine:} Enables scalable cloud-based processing.
+\end{itemize}
+
+\chapter{Implementation and Results}
+\section{Code Overview}
+The code initializes Google Earth Engine, defines the region of interest, filters satellite images, computes spectral indices, and applies regression and residual correction models. The final results are exported as GeoTIFF files for analysis.
+
+\section{Validation}
+The predicted LST maps were compared with in situ measurements and visualized to ensure consistency. Residual correction significantly enhanced the accuracy of downscaled data.
+
+\chapter{Conclusion and Future Work}
+\section{Key Findings}
+\begin{itemize}
+    \item High-resolution (10m) LST maps were generated with improved accuracy.
+    \item Residual correction proved effective in minimizing prediction errors.
+\end{itemize}
+
+\section{Future Directions}
+\begin{itemize}
+    \item Integrate additional spectral indices and machine learning models.
+    \item Explore real-time processing capabilities for dynamic applications.
+\end{itemize}
+
+\end{document}
